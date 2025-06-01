@@ -64,62 +64,42 @@ const Cart = ({ open, setOpen }) => {
                           role="list"
                           className="-my-6 divide-y divide-gray-200"
                         >
-                          {cart.length > 0
-                            ? cart.map((product) => (
-                                <li key={product.id} className="flex py-6">
-                                  <div className="size-20 shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                    <img
-                                      alt={product.alt}
-                                      src={product.imagenes[0]}
-                                      className="size-full object-cover"
-                                    />
-                                  </div>
+                          {cart.length > 0 ? (
+                            cart.map((product) => (
+                              <li key={product.id} className="flex py-6">
+                                <div className="size-20 shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                  <img
+                                    alt={product.alt}
+                                    src={product.imagenes[0]}
+                                    className="size-full object-cover"
+                                  />
+                                </div>
 
-                                  <div className="ml-4 flex flex-1 flex-col">
-                                    <div>
-                                      <div className="flex justify-between text-base font-medium text-gray-900">
-                                        <h3>{product.titulo.length > 55 ? product.titulo.slice(0, 55) + "..." : product.titulo}</h3>
-                                        <p className="ml-4">{FormatPrice(product.precio)}</p>
-                                      </div>
-                                      <p className="mt-1 text-sm text-gray-500">
-                                        {product.color}
+                                <div className="ml-4 flex flex-1 flex-col">
+                                  <div>
+                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                      <h3>
+                                        {product.titulo.length > 55
+                                          ? product.titulo.slice(0, 55) + "..."
+                                          : product.titulo}
+                                      </h3>
+                                      <p className="ml-4">
+                                        {FormatPrice(product.precio)}
                                       </p>
                                     </div>
-                                    <div className="flex flex-1 items-end justify-between text-sm">
-                                      <div className="flex items-center">
-                                        {product.quantity > 1 && (
-                                          <button
-                                            type="button"
-                                            onClick={() =>
-                                              handleReduceItemQuantity(product)
-                                            }
-                                            className="font-medium text-indigo-600 hover:text-indigo-500 mr-3"
-                                          >
-                                            <svg
-                                              xmlns="http://www.w3.org/2000/svg"
-                                              fill="none"
-                                              viewBox="0 0 24 24"
-                                              strokeWidth={1.5}
-                                              stroke="currentColor"
-                                              className="size-6"
-                                            >
-                                              <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                              />
-                                            </svg>
-                                          </button>
-                                        )}
-                                        <p className="text-gray-500 inline-block">
-                                          Qty {product.quantity}
-                                        </p>
+                                    <p className="mt-1 text-sm text-gray-500">
+                                      {product.color}
+                                    </p>
+                                  </div>
+                                  <div className="flex flex-1 items-end justify-between text-sm">
+                                    <div className="flex items-center">
+                                      {product.quantity > 1 && (
                                         <button
                                           type="button"
                                           onClick={() =>
-                                            handleIncreaseItemQuantity(product)
+                                            handleReduceItemQuantity(product)
                                           }
-                                          className="font-medium text-indigo-600 hover:text-indigo-500 ml-3"
+                                          className="font-medium text-indigo-600 hover:text-indigo-500 mr-3"
                                         >
                                           <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -132,29 +112,58 @@ const Cart = ({ open, setOpen }) => {
                                             <path
                                               strokeLinecap="round"
                                               strokeLinejoin="round"
-                                              d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                              d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                                             />
                                           </svg>
                                         </button>
-                                      </div>
-
-                                      <div className="flex">
-                                        <button
-                                          type="button"
-                                          className="font-medium text-indigo-600 hover:text-indigo-500"
-                                          onClick={() =>
-                                            handleRemoveFromCart(product)
-                                          }
+                                      )}
+                                      <p className="text-gray-500 inline-block">
+                                        Qty {product.quantity}
+                                      </p>
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          handleIncreaseItemQuantity(product)
+                                        }
+                                        className="font-medium text-indigo-600 hover:text-indigo-500 ml-3"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          strokeWidth={1.5}
+                                          stroke="currentColor"
+                                          className="size-6"
                                         >
-                                          Eliminar
-                                        </button>
-                                      </div>
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
+
+                                    <div className="flex">
+                                      <button
+                                        type="button"
+                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        onClick={() =>
+                                          handleRemoveFromCart(product)
+                                        }
+                                      >
+                                        Eliminar
+                                      </button>
                                     </div>
                                   </div>
-                                </li>
-                              ))
-                            : 
-                            <li className="text-gray-500">El carrito está vacío</li> }
+                                </div>
+                              </li>
+                            ))
+                          ) : (
+                            <li className="text-gray-500">
+                              El carrito está vacío
+                            </li>
+                          )}
                         </ul>
                       </div>
                     </div>
@@ -184,7 +193,7 @@ const Cart = ({ open, setOpen }) => {
                           className="font-medium text-indigo-600 hover:text-indigo-500"
                         >
                           Seguir comprando
-                          <span aria-hidden="true"> &rarr;</span>
+                          <span aria-hidden="true"> &rarr</span>
                         </button>
                       </p>
                     </div>

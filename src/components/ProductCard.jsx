@@ -14,25 +14,25 @@ const ProductCard = ({ product}) => {
     >
       <Link to={`/product/${product.id}`}>
         <img
-          src={imagenes[0]}
-          alt={alt}
+          src={product.imagenes[0]}
+          alt={product.alt}
           className="w-full h-48 object-cover"
         />
       </Link>
       <div className="h-[50%] p-4 flex flex-wrap">
         <div>
           <h4 className="text-lg font-semibold text-gray-800">
-            {titulo.length > 25
-              ? titulo.slice(0, 24) + "..."
-              : titulo}
+            {product.titulo.length > 25
+              ? product.titulo.slice(0, 24) + "..."
+              : product.titulo}
           </h4>
           <p className="text-gray-600 mb-2">
-            {descripcion.length > 50
-              ? descripcion.slice(0, 50) + "..."
-              : descripcion}
+            {product.descripcion.length > 50
+              ? product.descripcion.slice(0, 50) + "..."
+              : product.descripcion}
           </p>
           <span className="text-indigo-600 font-bold text-lg">
-            {FormatPrice(precio)}
+            {FormatPrice(product.precio)}
           </span>
         </div>
         <div className="w-full flex justify-between">

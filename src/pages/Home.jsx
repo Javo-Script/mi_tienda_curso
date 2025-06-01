@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 import Cart from '../components/Cart'
 
 const Home = () => {
-  const [isCartOpen, setCartOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false)
 
   return (
     <>

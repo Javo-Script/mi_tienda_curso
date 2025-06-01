@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const NavBar = ({ setOpen }) => {
-  const { totalItems} = useContext(CartContext);
+  const { totalItems } = useContext(CartContext);
 
   return (
     <nav className="w-full h-[5dvh] bg-white shadow-md py-3 px-4 flex justify-between items-center z-10 fixed t-0">

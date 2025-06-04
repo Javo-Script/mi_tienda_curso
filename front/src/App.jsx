@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import CheckLogged from "./components/CheckLogged";
+import CheckLogged from "./hooks/CheckLogged";
 import Shopped from "./pages/Shopped";
 import Favorites from "./pages/Favorites";
 import ProductListing from "./pages/ProductListing";

@@ -9,7 +9,8 @@ export const CartProvider = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [products, setProducts] = useState([]);
-  const [isLogged, setLogged] = useState(true);
+  const [user, setUser] = useState([]);
+  const [isLogged, setLogged] = useState(false);
 
   useEffect(() => {
     fetch("https://mi-tienda-curso.onrender.com/products")
@@ -21,6 +22,14 @@ export const CartProvider = ({ children }) => {
         console.log("Error: ", error);
       });
   }, []);
+
+  useEffect(() => {
+    const localUser = localStorage.getItem('user')
+    if (localUser) {
+      setUser(JSON.parse(localUser))
+      setLogged(true)
+    }
+  }, [])
 
   useEffect(() => {
     handleSumTotal();
@@ -94,13 +103,14 @@ export const CartProvider = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
-        cart,
-        totalPrice,
-        totalItems,
-        toastMessage,
-        toastType,
-        products,
-        isLogged,
+        cart, setCart,
+        totalPrice, setTotalPrice,
+        totalItems, setTotalItems,
+        toastMessage, setToastMessage,
+        toastType, setToastType,
+        products, setProducts,
+        user, setUser,
+        isLogged, setLogged,
         handleAddToCart,
         handleRemoveFromCart,
         handleReduceItemQuantity,

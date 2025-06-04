@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import handleLogin from "../hooks/handleLogin";
+
 
 const Login = () => {
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [error, setError] = useState(null)
+
   return (
     <section className="w-full h-[100dvh] flex items-center justify-center bg-gray-100">
       <div className="w-1/2 bg-white p-8 rounded shadow-md">
@@ -8,16 +15,16 @@ const Login = () => {
           Iniciar sesión
         </h2>
 
-        <form>
+        <div>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2" htmlFor="email">
               Correo electrónico
             </label>
             <input
               type="email"
-              id="email"
               placeholder="ejemplo@email.com"
               className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              onChange={(e)=> setEmail(e.target.value)}
             />
           </div>
 
@@ -27,19 +34,21 @@ const Login = () => {
             </label>
             <input
               type="password"
-              id="password"
               placeholder="••••••••"
               className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              onChange={(e)=> setPassword(e.target.value)}
             />
           </div>
 
           <button
             type="submit"
             className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition"
+            onClick={() => handleLogin(email, password, setError())}
           >
             Iniciar sesión
           </button>
-        </form>
+          {error && <p style={{color : 'red'}}>{error}</p>}
+        </div>
 
         <div className="mt-6 flex justify-between text-sm text-gray-600">
           <Link to="/register" className="hover:text-indigo-600 transition">

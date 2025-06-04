@@ -43,7 +43,7 @@ const Login = () => {
           <button
             type="submit"
             className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition"
-            onClick={() => handleLogin(email, password, setError())}
+            onClick={() => handleLogin(email, password, setError={setError})}
           >
             Iniciar sesión
           </button>

@@ -40,16 +40,23 @@ app.post('/products', (req, res) => {
     fs.writeFileSync(productsPath, JSON.stringify(products, null, 2))
 })
 
-app.get('/users', (req, res) => {
-    const users = getData('users')
-    res.json(users)
-})
-
 app.get('/users/:id', (req, res) => {
     const users = getData('users')
     const id = Number(req.params.id)
     const user = users.find(item => {item.id === id})
     user ? res.json(user) : res.status(404).send("No se encontro el usuario")
+})
+
+app.post('/users/login', (req, res) => {
+    const {email, password} = req.body
+    const users = getData(users)
+    const user = users.find( us => us.email === email && us.password === password)
+
+    if(user) {
+        res.json(user)
+    } else {
+        res.status(401).json({mensaje : "Usuario no encontrado"})
+    }
 })
 
 app.post('/users', (req, res) => {

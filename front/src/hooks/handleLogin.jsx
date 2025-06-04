@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext"
 
 
 const handleLogin = async (email, password, setError) => {
-    const { setUser, setLogged} = useContext(CartContext)
+    const { setUser, setLogged } = useContext(CartContext)
 
     try{
         const res = await fetch('https://mi-tienda-curso.onrender.com/users/login',{

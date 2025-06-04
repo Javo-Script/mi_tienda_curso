@@ -49,7 +49,7 @@ app.get('/users/:id', (req, res) => {
 
 app.post('/users/login', (req, res) => {
     const {email, password} = req.body
-    const users = getData(users)
+    const users = getData('users')
     const user = users.find( us => us.email === email && us.password === password)
 
     if(user) {

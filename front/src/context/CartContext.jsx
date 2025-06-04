@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
   const [isLogged, setLogged] = useState(true);
 
   useEffect(() => {
-    fetch("./utils/productos.json")
+    fetch("https://mi-tienda-curso.onrender.com/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

@@ -52,8 +52,14 @@ app.post('/users/login', (req, res) => {
     const users = getData('users')
     const user = users.find( us => us.email === email && us.password === password)
 
-    if(user) {
-        res.json(user)
+    if (user) {
+        const userData = {
+            id: user.id,
+            name: user.name,
+            last_name: user.last_name,
+            email: user.email
+        };
+        res.json(userData);
     } else {
         res.status(401).json({mensaje : "Usuario no encontrado"})
     }

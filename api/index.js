@@ -57,7 +57,8 @@ app.post('/users/login', (req, res) => {
             id: user.id,
             name: user.name,
             last_name: user.last_name,
-            email: user.email
+            email: user.email,
+            ...(user.role === "admin" && { role: user.role })
         };
         res.json(userData);
     } else {

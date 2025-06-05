@@ -14,7 +14,7 @@ const ComingSoon = ({from}) => {
     >
       <div className="max-w-[60dvw] bg-black bg-opacity-50 p-8 rounded-lg">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          {from === "shoppingHistory" ? `Hola ${user.name}. Esta secciòn estará disponible próximamente` : 'En breve vas a poder registrarte'}
+          {from === "shoppingHistory" ? `Hola ${user.name}. Esta sección estará disponible próximamente` : 'En breve vas a poder registrarte'}
         </h2>
         <p className="text-lg md:text-xl mb-6">
           Mientras tanto te invitamos a ver nuestros productos

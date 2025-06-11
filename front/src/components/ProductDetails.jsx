@@ -7,6 +7,7 @@ const ProductDetails = () => {
   const { products, handleAddToCart, toastMessage, toastType } = useContext(CartContext);
   const id = Number(useParams().id);
   const product = products.find((item) => item.id === id);
+  console.log(product.imagenes[0])
 
   if (products.length === 0) {
     return <p className="text-center p-6">Cargando producto...</p>;
@@ -24,25 +25,21 @@ const ProductDetails = () => {
         <div className="pt-6">
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <img
-              alt={product.imagenes[0].alt}
-              src={product.imagenes[0].src}
+              src={product.imagenes[0]}
               className="hidden size-full rounded-lg object-cover lg:block"
             />
             <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
               <img
-                alt={product.imagenes[1].alt}
-                src={product.imagenes[1].src}
+                src={product.imagenes[1]}
                 className="aspect-3/2 w-full rounded-lg object-cover"
               />
               <img
-                alt={product.imagenes[2].alt}
-                src={product.imagenes[2].src}
+                src={product.imagenes[2]}
                 className="aspect-3/2 w-full rounded-lg object-cover"
               />
             </div>
             <img
-              alt={product.imagenes[3].alt}
-              src={product.imagenes[3].src}
+              src={product.imagenes[3]}
               className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
             />
           </div>

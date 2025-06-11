@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom"
 import { CartContext } from "../context/CartContext";
 
 const ComingSoon = ({from}) => {
@@ -14,17 +15,20 @@ const ComingSoon = ({from}) => {
     >
       <div className="max-w-[60dvw] bg-black bg-opacity-50 p-8 rounded-lg">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          {from === "shoppingHistory" ? `Hola ${user.name}. Esta sección estará disponible próximamente` : 'En breve vas a poder registrarte'}
+          Hola {user.name}.
+        </h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Esta sección estará disponible en breve
         </h2>
         <p className="text-lg md:text-xl mb-6">
           Mientras tanto te invitamos a ver nuestros productos
         </p>
-        <a
-          href="#productos"
+        <Link
+          to = "/products"
           className="bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-500 transition"
         >
           Ver productos
-        </a>
+        </Link>
       </div>
     </header>
   );

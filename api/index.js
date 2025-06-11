@@ -21,6 +21,7 @@ app.get('/', (req, res) =>{
     res.send('API funcionando correctamente')
 })
 
+/* PRODUCTS PATHS */
 app.get('/products', (req, res) => {
     const products = getData('products')
     res.json(products)
@@ -40,12 +41,23 @@ app.post('/products', (req, res) => {
     fs.writeFileSync(productsPath, JSON.stringify(products, null, 2))
 })
 
+/* USERS PATHS */
+
 app.get('/users/:id', (req, res) => {
     const users = getData('users')
     const id = Number(req.params.id)
     const user = users.find(item => {item.id === id})
     user ? res.json(user) : res.status(404).send("No se encontro el usuario")
 })
+
+app.post('/users', (req, res) => {
+    const users = getData('users')
+    const newUser = {id : users.length + 1, ...req.body}
+    users.push(newUser)
+    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+})
+
+/* USER AUTH */
 
 app.post('/users/login', (req, res) => {
     const {email, password} = req.body
@@ -64,13 +76,6 @@ app.post('/users/login', (req, res) => {
     } else {
         res.status(401).json({mensaje : "Usuario no encontrado"})
     }
-})
-
-app.post('/users', (req, res) => {
-    const users = getData('users')
-    const newUser = {id : users.length + 1, ...req.body}
-    users.push(newUser)
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
 })
 
 app.listen(PORT, () => {

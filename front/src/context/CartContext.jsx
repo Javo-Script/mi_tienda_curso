@@ -52,7 +52,7 @@ export const CartProvider = ({ children }) => {
   const handleAddToCart = (product) => {
     const isAdded = cart.find((item) => item.id === product.id);
     if (isAdded) {
-      handleIncreaseItemQuantity(product); // solo esto
+      handleIncreaseItemQuantity(product);
     } else {
       setToastMessage("¡Producto agregado al carrito!");
       setToastType("success");

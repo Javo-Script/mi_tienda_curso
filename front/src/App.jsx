@@ -2,14 +2,15 @@ import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Profile from "./pages/Profile";
-import CheckLogged from "./hooks/CheckLogged";
 import Shopped from "./pages/Shopped";
 import Favorites from "./pages/Favorites";
+import Profile from "./pages/Profile";
 import ProductListing from "./pages/ProductListing";
 import Product from "./pages/Product";
+import Search from "./pages/Search";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import CheckLogged from "./hooks/CheckLogged";
 
 function App() {
   const { isLogged } = useContext(CartContext);
@@ -43,8 +44,9 @@ function App() {
           </CheckLogged>
         }
       />
-      <Route path="/register" element={<Register />} />
+      <Route path="/search/:string" element={<Search />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   );
 }

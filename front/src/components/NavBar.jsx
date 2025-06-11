@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom"
 import { CartContext } from "../context/CartContext";
 
 const NavBar = ({ setOpen }) => {
-  const { totalItems, isLogged, setLogged } = useContext(CartContext);
+  const { user, totalItems, isLogged, setLogged } = useContext(CartContext);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [searchInput, setSearchInput] = useState();
   const userMenuRef = useRef();
   const navigate = useNavigate()
 
@@ -30,22 +31,37 @@ const NavBar = ({ setOpen }) => {
     }, 10);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchInput.trim() !== "") {
+      navigate(`/search/${searchInput}`);
+    }
+  };
+
   return (
     <>
       <nav className="w-full h-[5dvh] bg-white shadow-md py-3 px-4 flex justify-between items-center z-10 fixed t-0">
         <Link to="/" className="text-2xl font-bold text-indigo-600">
           MiTienda
         </Link>
-        <div className="w-1/2 mx-auto px-4 flex gap-4 items-center">
+        <form
+          onSubmit={handleSubmit}
+          className="w-1/2 mx-auto px-4 flex gap-4 items-center"
+        >
           <input
             type="text"
             placeholder="Buscar productos..."
             className="flex-1 px-4 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button className="bg-indigo-600 text-white px-4 py-1 rounded hover:bg-indigo-700">
+          <button
+            type="submit"
+            className="bg-indigo-600 text-white px-4 py-1 rounded hover:bg-indigo-700"
+          >
             Buscar
           </button>
-        </div>
+        </form>
         <div className="flex gap-4 items-center">
           <Link
             to="/mis-compras"
@@ -117,7 +133,7 @@ const NavBar = ({ setOpen }) => {
                 to="/profile"
                 className="block px-4 py-2 text-gray-700 hover:bg-indigo-100"
               >
-                Perfil
+                {user.role  ? "Panel admin" : "Perfil"}
               </Link>
             </li>
             <li>

@@ -5,7 +5,6 @@ import { FormatPrice } from "../hooks/FormatPrice";
 
 const ProductCard = ({ product}) => {
   const { handleAddToCart } = useContext(CartContext);
-  const { imagenes, alt, titulo, descripcion, precio } = product;
 
   return (
     <div
@@ -36,9 +35,12 @@ const ProductCard = ({ product}) => {
           </span>
         </div>
         <div className="w-full flex justify-between">
-          <button className="block w-[75%] mt-4 border-2 border-indigo-600 text-indigo-600 py-2 rounded hover:bg-indigo-700 hover:text-white">
+          <Link 
+            to = {`/product/${product.id}`}
+            className="block w-[75%] mt-4 py-2 border-2 border-indigo-600 text-indigo-600 text-center rounded hover:bg-indigo-700 hover:text-white"
+          >
             Ver más
-          </button>
+          </Link>
           <button
             className="block w-[20%] mt-4 border-2 border-indigo-600 bg-indigo-600 text-white rounded hover:bg-indigo-700 flex justify-center items-center"
             onClick={() => handleAddToCart(product)}

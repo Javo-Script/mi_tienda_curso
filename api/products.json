@@ -3,7 +3,7 @@
     "id": 1,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1713990122367-1159d2f64eff?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -27,7 +27,7 @@
     "id": 2,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1607280070164-8116538c3530?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -51,7 +51,7 @@
     "id": 3,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1698244441525-c3e041350f7e?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -75,7 +75,7 @@
     "id": 4,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1695116794036-dac45f34c4a5?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -99,7 +99,7 @@
     "id": 5,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1672923565510-10ffdff354e5?q=80&w=4096&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -123,7 +123,7 @@
     "id": 6,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1569441508845-c6da9a35924c?q=80&w=4180&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -147,7 +147,7 @@
     "id": 7,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1746276584005-77376a4af877?q=80&w=4374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -171,7 +171,7 @@
     "id": 8,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1639170851014-d55d5debb17f?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -195,7 +195,7 @@
     "id": 9,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1588369222459-6997216729fc?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -219,7 +219,7 @@
     "id": 10,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://plus.unsplash.com/premium_photo-1680721575441-18d5a0567269?q=80&w=3600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -243,7 +243,7 @@
     "id": 11,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1697986152095-272818a201df?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -267,7 +267,7 @@
     "id": 12,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1699813381190-066405fa176f?q=80&w=4032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -291,7 +291,7 @@
     "id": 13,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1718998673024-5c0ce531f67a?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -315,7 +315,7 @@
     "id": 14,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1639087595550-e9770a85f8c0?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -339,7 +339,7 @@
     "id": 15,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1706289764950-a02fb30b53b1?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -363,7 +363,7 @@
     "id": 16,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1628114855639-f8294222fdc2?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -387,7 +387,7 @@
     "id": 17,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1698244441516-10f5506a110d?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -411,7 +411,7 @@
     "id": 18,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"
@@ -435,7 +435,7 @@
     "id": 19,
     "categoria": "celular",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?smartphone,front",
+      "https://images.unsplash.com/photo-1718998673024-2ffd901792ad?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?smartphone,profile",
       "https://source.unsplash.com/featured/300x300/?smartphone,back",
       "https://source.unsplash.com/featured/300x300/?smartphone,detail"
@@ -459,7 +459,7 @@
     "id": 20,
     "categoria": "computadora",
     "imagenes": [
-      "https://source.unsplash.com/featured/300x300/?laptop,front",
+      "https://images.unsplash.com/photo-1730794545099-14902983739d?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://source.unsplash.com/featured/300x300/?laptop,keyboard",
       "https://source.unsplash.com/featured/300x300/?laptop,side",
       "https://source.unsplash.com/featured/300x300/?laptop,screen"

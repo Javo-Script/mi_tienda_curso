@@ -23,7 +23,6 @@ export const useLogin = () => {
             }
 
             const user = await res.json()
-            const userData = {user}
             localStorage.setItem('user', JSON.stringify(user))
             setUser(user)
             setLogged(true)

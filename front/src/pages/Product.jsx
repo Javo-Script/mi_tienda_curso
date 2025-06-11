@@ -14,6 +14,15 @@ const Product = () => {
       <ProductDetails from={"Product"} />
       <Footer />
       {isCartOpen && <Cart open={isCartOpen} setOpen={setCartOpen} />}
+      {toastMessage && (
+        <div
+          className={`fixed top-4 right-4 ${
+            toastType === "error" ? "bg-red-500" : "bg-green-500"
+          } text-white px-4 py-2 rounded shadow-lg z-50 animate-fade-in-out`}
+        >
+          {toastMessage}
+        </div>
+      )}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { FormatPrice } from "../hooks/FormatPrice";
 import ProductModal from "./ProductModal";
@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
     isModalOpen,
     setModalOpen,
     setSelectedProduct,
+    setToastMessage, setToastType,
   } = useContext(CartContext);
 
   const { handleDelete } = useHandleProduct(product);
@@ -65,6 +66,9 @@ const ProductCard = ({ product }) => {
     </svg>
   );
 
+  const iconsContainer = user.role ? "w-[45%]" : "w-[40%]"
+  const iconsWidth = user.role ? "w-[47.5%]" : "w-[100%]"
+
   return (
     <>
       <div
@@ -94,27 +98,42 @@ const ProductCard = ({ product }) => {
             </p>
           </div>
           <div className="w-full flex flex-wrap justify-between items-center">
-            <button
-              className="flex justify-center items-center w-[25%] py-1 border-2 border-indigo-600 text-indigo-600 text-center rounded hover:bg-indigo-700 hover:text-white"
-              onClick={() => {
-                if (user.role) {
-                  setSelectedProduct(product);
-                  setModalOpen(true);
-                } else {
-                  handleAddToCart(product);
-                }
-              }}
-            >
-              {user.role ? pencil_icon : bag_icon}
-            </button>
-            {user.role && (
+            <div className={`flex justify-between items-between ${iconsContainer}`} >
               <button
-                className="flex justify-center items-center w-[25%] py-1 border-2 border-red-600 text-red-600 text-center rounded hover:bg-red-700 hover:text-white"
-                onClick={() => { handleDelete(product) }}
+                className={`flex justify-center items-center ${iconsWidth} py-1 border-2 border-indigo-600 text-indigo-600 text-center rounded hover:bg-indigo-700 hover:text-white`}
+                onClick={() => {
+                  if (user.role) {
+                    setSelectedProduct(product);
+                    setModalOpen(true);
+                  } else {
+                    handleAddToCart(product);
+                  }
+                }}
               >
-                {bin_icon}
+                {user.role ? pencil_icon : bag_icon}
               </button>
-            )}
+              {user.role && (
+                <button
+                  className={`flex justify-center items-center ${iconsWidth} py-1 border-2 border-red-600 text-red-600 text-center rounded hover:bg-red-700 hover:text-white`}
+                  onClick={async () => {
+                    const wasDeleted = handleDelete(product)
+
+                    if (wasDeleted) {
+                      setToastType("success");
+                      setToastMessage("Producto eliminado correctamente.");
+                      setModalOpen(false);
+                    } else {
+                      setToastType("error");
+                      setToastMessage("Ocurrió un error al guardar el producto.");
+                    }
+
+                    setTimeout(() => setToastMessage(""), 3000);
+                  }}
+                >
+                  {bin_icon}
+                </button>
+              )}
+            </div>
 
             <p className="text-indigo-600 font-bold text-xl">
               {FormatPrice(product.precio)}

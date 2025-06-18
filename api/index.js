@@ -42,6 +42,18 @@ app.post('/products', (req, res) => {
     res.status(201).json(newProduct)
 })
 
+app.put('/products/:id', (req, res) => {
+  const products = getData('products');
+  const id = Number(req.params.id);
+  const index = products.findIndex((p) => p.id === id);
+
+  if (index === -1) return res.status(404).send("Producto no encontrado");
+
+  products[index] = { ...products[index], ...req.body };
+  fs.writeFileSync(productsPath, JSON.stringify(products, null, 2));
+  res.json(products[index]);
+});
+
 app.delete('/products/:id', (req, res) => {
   const products = getData('products');
   const id = Number(req.params.id);

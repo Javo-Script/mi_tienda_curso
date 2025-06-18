@@ -329,7 +329,7 @@ const ProductModal = () => {
                 setToastMessage("Ocurrió un error al guardar el producto.");
               }
 
-              setTimeout(() => setToastMessage(""), 3000);
+              setTimeout(() => setToastMessage(""), 1500);
             }}
             className="w-[50%] bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
           >

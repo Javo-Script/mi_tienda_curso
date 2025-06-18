@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom"
 
 
 export const useLogin = () => {
-  const { setUser, setLogged, setToastMessage, setToastType } = useContext(CartContext);
+  const { setUser, setLogged, setToastMessage, setToastType, setShowUserMenu } = useContext(CartContext);
   const navigate = useNavigate()
   const location = useLocation();
   const before = location.state?.from || "/";
@@ -26,6 +26,7 @@ export const useLogin = () => {
             localStorage.setItem('user', JSON.stringify(user))
             setUser(user)
             setLogged(true)
+            setShowUserMenu(false)
             navigate(before)
         } catch (err) {
             setToastType("error");

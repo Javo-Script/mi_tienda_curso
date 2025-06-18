@@ -10,7 +10,12 @@ export const CartProvider = ({ children }) => {
   const [totalItems, setTotalItems] = useState(0);
   const [products, setProducts] = useState([]);
   const [user, setUser] = useState([]);
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const [isLogged, setLogged] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false)
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
 
   useEffect(() => {
     fetch("https://mi-tienda-curso.onrender.com/products")
@@ -59,7 +64,7 @@ export const CartProvider = ({ children }) => {
       setTimeout(() => {
         setToastMessage("");
         setToastType("");
-      }, 2000);
+      }, 1500);
       setCart((prevCart) => [...prevCart, { ...product, quantity: 1 }]);
     }
   };
@@ -78,7 +83,7 @@ export const CartProvider = ({ children }) => {
             setTimeout(() => {
               setToastMessage("");
               setToastType("");
-            }, 2000);
+            }, 1500);
             return item;
           }
           return { ...item, quantity: item.quantity + 1 };
@@ -110,7 +115,11 @@ export const CartProvider = ({ children }) => {
         toastType, setToastType,
         products, setProducts,
         user, setUser,
+        showUserMenu, setShowUserMenu,
         isLogged, setLogged,
+        isCartOpen, setCartOpen,
+        isModalOpen, setModalOpen,
+        selectedProduct, setSelectedProduct,
         handleAddToCart,
         handleRemoveFromCart,
         handleReduceItemQuantity,

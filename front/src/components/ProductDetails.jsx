@@ -1,13 +1,23 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { useParams } from "react-router-dom";
 import { FormatPrice } from "../hooks/FormatPrice";
+import ProductModal from "./ProductModal";
 
 const ProductDetails = () => {
-  const { products, handleAddToCart, toastMessage, toastType } = useContext(CartContext);
+  const {
+    user,
+    products,
+    handleAddToCart,
+    toastMessage,
+    toastType,
+    isModalOpen,
+    setModalOpen,
+    setSelectedProduct,
+  } = useContext(CartContext);
+
   const id = Number(useParams().id);
   const product = products.find((item) => item.id === id);
-  console.log(product.imagenes[0])
 
   if (products.length === 0) {
     return <p className="text-center p-6">Cargando producto...</p>;
@@ -28,14 +38,14 @@ const ProductDetails = () => {
               src={product.imagenes[0]}
               className="hidden size-full rounded-lg object-cover lg:block"
             />
-            <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+            <div className="hidden lg:flex lg:flex-wrap lg:content-between lg:max-h-[40vh]">
               <img
                 src={product.imagenes[1]}
-                className="aspect-3/2 w-full rounded-lg object-cover"
+                className="aspect-3/2 w-full max-h-[46%] rounded-lg object-cover"
               />
               <img
                 src={product.imagenes[2]}
-                className="aspect-3/2 w-full rounded-lg object-cover"
+                className="aspect-3/2 w-full max-h-[46%] rounded-lg object-cover"
               />
             </div>
             <img
@@ -43,7 +53,7 @@ const ProductDetails = () => {
               className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
             />
           </div>
-          <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+          <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-6 lg:pb-4">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                 {product.titulo}
@@ -55,13 +65,19 @@ const ProductDetails = () => {
               </p>
 
               <button
-                  className="mt-20 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Añadir al carrito
-                </button>
+                className="mt-20 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+                onClick={() => {
+                if (user.role) {
+                  setSelectedProduct(product);
+                  setModalOpen(true);
+                } else {
+                  handleAddToCart(product);
+                }}}
+              >
+                {user.role ? "Editar producto" : "Añadir al carrito"}
+              </button>
             </div>
-            <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
+            <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-4">
               <div>
                 <div className="space-y-6">
                   <p className="text-base text-gray-900">
@@ -102,6 +118,8 @@ const ProductDetails = () => {
           {toastMessage}
         </div>
       )}
+
+      {isModalOpen && <ProductModal />}
     </>
   );
 };

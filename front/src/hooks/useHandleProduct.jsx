@@ -74,6 +74,24 @@ const useHandleProduct = (initialProduct = {}) => {
     }
   };
 
+  const handleDelete = async (deleteProduct) => {
+    try {
+      const response = await fetch(`https://mi-tienda-curso.onrender.com/products/${deleteProduct.id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(deleteProduct),
+      });
+
+      if (!response.ok) throw new Error("Error al eliminar el producto");
+
+      console.log("Producto eliminado exitosamente");
+      return true;
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+  };
+
 
 
   const addNewField = () => {
@@ -128,7 +146,7 @@ const useHandleProduct = (initialProduct = {}) => {
     handleImageChange,
     handleFichaChange,
     removeFeatureField,
-    handleSave, handleUpdate
+    handleSave, handleUpdate, handleDelete
   };
 };
 

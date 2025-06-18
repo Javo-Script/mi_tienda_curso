@@ -10,7 +10,7 @@ const ProductModal = () => {
     newFieldValue, setNewFieldValue,
     editingImageIndex, setEditingImageIndex,
     nuevaURL, setNuevaURL,
-    addNewField, fichaRef,
+    fichaRef,
     showGradient,
     lastInputRef,
     handleInputChange,

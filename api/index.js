@@ -42,16 +42,12 @@ app.post('/products', (req, res) => {
     res.status(201).json(newProduct)
 })
 
-app.put('/products/:id', (req, res) => {
+app.delete('/products/:id', (req, res) => {
   const products = getData('products');
   const id = Number(req.params.id);
-  const index = products.findIndex((p) => p.id === id);
-
-  if (index === -1) return res.status(404).send("Producto no encontrado");
-
-  products[index] = { ...products[index], ...req.body };
-  fs.writeFileSync(productsPath, JSON.stringify(products, null, 2));
-  res.json(products[index]);
+  const updatedProducts = products.filter(p => p.id !== id);
+  fs.writeFileSync(productsPath, JSON.stringify(updatedProducts, null, 2));
+  res.json({ mensaje: "Producto eliminado con éxito" });
 });
 
 /* USERS PATHS */

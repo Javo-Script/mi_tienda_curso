@@ -39,6 +39,7 @@ app.post('/products', (req, res) => {
     const newProduct = {id : products.length + 1, ...req.body}
     products.push(newProduct)
     fs.writeFileSync(productsPath, JSON.stringify(products, null, 2))
+    res.status(201).json(newProduct)
 })
 
 app.put('/products/:id', (req, res) => {

@@ -49,26 +49,31 @@ const useHandleProduct = (initialProduct = {}) => {
       if (!response.ok) throw new Error("Error al guardar el producto");
 
       console.log("Producto guardado exitosamente");
+      return true;
     } catch (err) {
       console.error(err);
+      return false;
     }
   };
 
-const handleUpdate = async (updatedProduct) => {
-  try {
-    const response = await fetch(`https://mi-tienda-curso.onrender.com/products/${updatedProduct.id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedProduct),
-    });
+  const handleUpdate = async (updatedProduct) => {
+    try {
+      const response = await fetch(`https://mi-tienda-curso.onrender.com/products/${updatedProduct.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedProduct),
+      });
 
-    if (!response.ok) throw new Error("Error al actualizar el producto");
+      if (!response.ok) throw new Error("Error al actualizar el producto");
 
-    console.log("Producto actualizado exitosamente");
-  } catch (err) {
-    console.error(err);
-  }
-};
+      console.log("Producto actualizado exitosamente");
+      return true;
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+  };
+
 
 
   const addNewField = () => {
